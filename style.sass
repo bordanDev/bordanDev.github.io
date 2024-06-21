@@ -1,0 +1,305 @@
+@import 'colors.sass'
+@import 'text-style.sass'
+
+*
+    margin: 0
+
+    &,
+    &::after,
+    &::before
+        -moz-box-sizing: border-box
+        -webkit-box-sizing: border-box
+        box-sizing: border-box
+
+html
+    height: 100%
+    width: 100%
+    font-size: 100%
+    line-height: 1
+    font-size: 14px
+    -ms-text-size-adjust: 100%
+    -moz-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%
+
+body
+    font-family: "Manrope", sans-serif
+    font-optical-sizing: auto
+    font-weight: 400
+    font-style: normal
+    background-color: #F9F9F9
+
+section
+    height: 80vh
+
+.container
+    max-width: 1600px
+    margin: 0 auto
+    padding: 0 32px
+
+.r
+    font-weight: 400
+
+.b
+    font-weight: 700
+
+.btn
+    background-color: $white-900
+    border: solid 1px $white-600
+
+    &:hover
+        background-color: $white-800
+
+.btn,
+.btn-trns
+    cursor: pointer
+    font-weight: 700
+    line-height: 130%
+
+a
+    text-decoration: none
+    color: $gray-500
+
+    &:hover
+        color: #1E93FF
+
+.circle
+    display: block
+    width: 4px
+    height: 4px
+    background-color: $gray-800
+    border-radius: 4px
+
+/* Color text pattern */
+
+.sub-t
+    color: $gray-800
+
+/* Alignment pattern */
+
+.flex-fill-h
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.flex-h
+    display: flex
+    align-items: center
+    gap: 8px
+
+/* Animation pattern */
+
+.anim-sp-n
+    transition: 0.3s ease-out
+
+/* Scroll */
+
+/* Customizes the whole scrollbar */
+::-webkit-scrollbar
+    width: 0px
+    /* Width of the scrollbar */
+
+/* Customizes the track of the scrollbar */
+::-webkit-scrollbar-track
+    background: #f1f1f1
+    /* Color of the track */
+
+/* Customizes the thumb of the scrollbar */
+::-webkit-scrollbar-thumb
+    background: $gray-800
+    border-radius: 0px
+    /* Color of the thumb */
+
+/* Changes the thumb color on hover */
+::-webkit-scrollbar-thumb:hover
+    background: $gray-600
+    /* Darker color on hover */
+
+/* Header */
+
+.home-btn
+    margin: 10px 0
+
+.header
+    height: 100vh
+    position: relative
+
+    #up
+        bottom: 161px
+        transform: rotate(180deg)
+        z-index: 2000
+
+        &.change
+            bottom: 60px
+
+.header-menu
+    display: flex
+    justify-content: space-between
+    padding: 24px 0
+
+.header-links
+    display: flex
+    gap: 56px
+    align-items: center
+
+    a
+        padding: 8px
+        transition: 0.3s ease-out
+
+.header-section
+    display: flex
+    justify-content: space-between
+    position: relative
+    height: calc(100vh - 117px)
+
+    &__img
+        position: absolute
+        left: 0
+        bottom: 0
+        width: auto
+        max-width: 50vw
+        height: auto
+        max-height: calc(100vh - 117px)
+
+    &__text
+        margin-top: 25vh
+        max-width: 636px
+        margin-right: 144px
+
+        h1
+            color: darken($gray-500, 0)
+
+    &__tags
+        color: $gray-500
+        display: flex
+        gap: 8px
+        margin-top: 24px
+
+        .tag
+            display: inline-flex
+            padding: 8px 20px
+            background-color: $white-500
+            border-radius: 12px
+            align-items: center
+            gap: 8px
+
+        .circle
+            width: 6px
+            height: 6px
+
+    &__upper
+        display: flex
+        gap: 8px
+        align-items: center
+        margin-bottom: 4px
+
+        p.p1
+            color: $gray-800
+
+        .circle
+            background-color: $gray-800
+
+.achievements
+    .h2
+        margin-top: 150px
+.btn-scroll
+    border-radius: 100px
+    padding: 25px 29px
+    display: inline-block
+    cursor: pointer
+    position: absolute
+    right: 0
+    bottom: 72px
+    z-index: 999
+    margin-right: 32px
+
+.person-info
+    @extend .d-flex
+    background-color: $white-500
+    border-radius: 20px
+    bottom: 64px
+    left: 0
+    gap: 2px
+    padding: 20px 20px
+    width: 319px
+    max-height: 117px
+
+    .flex-fill-h
+        .p4
+            color: $gray-700
+
+.d-flex
+    display: flex
+    flex-direction: column
+    position: absolute
+
+.person-info .flex-fill-h .p4,
+.person-info .flex-h .p3
+    color: $gray-700
+
+.person-info .flex-fill-h .p3
+    color: $gray-600
+
+.person-info .h4
+    color: $gray-500
+
+/* Drop down */
+
+.dd-area
+    position: relative
+    width: 48px
+    height: 32px
+
+.dd-list-btn
+    position: absolute
+    top: -1
+    padding: 8px
+    display: flex
+    gap: 6px
+    align-items: center
+    line-height: 130%
+    font-size: 13px
+    z-index: 999
+    border-radius: 12px
+
+.dd-list
+    position: absolute
+    top: 34px
+    width: 48px
+    border-radius: 12px
+    z-index: 999
+    display: flex
+    gap: 2px
+    flex-direction: column
+
+.dd-btn
+    text-align: center
+    padding: 8px
+    border-radius: 12px
+    line-height: 130%
+    font-size: 13px
+
+.dd-area:hover .dd-list-btn
+    background-color: $gray-900
+
+.dd-list-hover
+    transform: translateX(48px)
+    transition: 0.3s ease
+    opacity: 0
+    width: 0
+    height: 0
+
+.dd-area:hover .dd-list-hover
+    transform: translateX(0px)
+    opacity: 1
+    width: 48px
+    height: auto
+
+.dd-btn:hover
+    background-color: $white-600
+    /* color: $primary-900) */
+
+.disabled
+    display: none
+
+.rotate
+    transform: rotate(180deg)
