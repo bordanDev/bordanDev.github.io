@@ -150,6 +150,10 @@ a:hover {
   transition: 0.3s ease-out;
 }
 
+.anim-sp-h, .scrollbar .scroll, .disabled, .header-section, .header {
+  transition: 0.2s ease-out;
+}
+
 /* Scroll */
 /* Customizes the whole scrollbar */
 ::-webkit-scrollbar {
@@ -366,7 +370,7 @@ a:hover {
 }
 
 .rotate {
-  transform: rotate(180deg);
+  bottom: 0;
 }
 
 .achievements {
@@ -419,4 +423,26 @@ a:hover {
 .achievements-info .subtitle {
   margin-bottom: 98px;
   color: #969696;
+}
+
+.scrollbar {
+  position: absolute;
+  right: 32px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 4px;
+  height: 45%;
+  transform: translate(0, 55%);
+}
+.scrollbar .scroll {
+  width: inherit;
+  background-color: #EBEBEB;
+  border-radius: 20px;
+  height: 20vh;
+}
+.scrollbar .scroll.active {
+  background-color: #B0B0B0;
+  height: 60vh;
 }/*# sourceMappingURL=style.css.map */

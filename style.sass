@@ -92,6 +92,9 @@ a
 .anim-sp-n
     transition: 0.3s ease-out
 
+.anim-sp-h
+    transition: 0.2s ease-out
+
 /* Scroll */
 
 /* Customizes the whole scrollbar */
@@ -121,6 +124,7 @@ a
     margin: 10px 0
 
 .header
+    @extend .anim-sp-h
     height: 100vh
     position: relative
 
@@ -147,6 +151,7 @@ a
         transition: 0.3s ease-out
 
 .header-section
+    @extend .anim-sp-h
     display: flex
     justify-content: space-between
     position: relative
@@ -297,10 +302,12 @@ a
         height: 0
 
 .disabled
+    @extend .anim-sp-h
     display: none
 
 .rotate
-    transform: rotate(180deg)
+    // transform: rotate(180deg)
+    bottom: 0
 
 .achievements
     position: relative
@@ -348,3 +355,25 @@ a
     .subtitle
         margin-bottom: 98px
         color: $gray-800
+
+.scrollbar
+    position: absolute
+    right: 32px
+    top: 0
+    display: flex
+    flex-direction: column
+    gap: 12px
+    width: 4px
+    height: 45%
+    transform: translate(0, 55%)
+
+    .scroll
+        @extend .anim-sp-h
+        width: inherit
+        background-color: $white-600
+        border-radius: 20px
+        height: 20vh
+
+        &.active
+            background-color: $gray-900
+            height: 60vh
