@@ -27,6 +27,7 @@ body
     font-weight: 400
     font-style: normal
     background-color: #F9F9F9
+    color: $gray-500
 
 section
     height: 80vh
@@ -192,7 +193,7 @@ a
         align-items: center
         margin-bottom: 4px
 
-        p.p1
+        .p2
             color: $gray-800
 
         .circle
@@ -223,7 +224,14 @@ a
     width: 319px
     max-height: 117px
 
+    .h4
+        color: $gray-500
+
     .flex-fill-h
+        .p3
+            color: $gray-600
+
+    .flex-h
         .p4
             color: $gray-700
 
@@ -232,74 +240,111 @@ a
     flex-direction: column
     position: absolute
 
-.person-info .flex-fill-h .p4,
-.person-info .flex-h .p3
-    color: $gray-700
-
-.person-info .flex-fill-h .p3
-    color: $gray-600
-
-.person-info .h4
-    color: $gray-500
-
 /* Drop down */
 
-.dd-area
-    position: relative
-    width: 48px
-    height: 32px
+.dd
+    &-area
+        position: relative
+        width: 48px
+        height: 32px
 
-.dd-list-btn
-    position: absolute
-    top: -1
-    padding: 8px
-    display: flex
-    gap: 6px
-    align-items: center
-    line-height: 130%
-    font-size: 13px
-    z-index: 999
-    border-radius: 12px
+    &-list-btn
+        position: absolute
+        top: -1
+        padding: 8px
+        display: flex
+        gap: 6px
+        align-items: center
+        line-height: 130%
+        font-size: 13px
+        z-index: 999
+        border-radius: 12px
 
-.dd-list
-    position: absolute
-    top: 34px
-    width: 48px
-    border-radius: 12px
-    z-index: 999
-    display: flex
-    gap: 2px
-    flex-direction: column
+    &-list
+        position: absolute
+        top: 34px
+        width: 48px
+        border-radius: 12px
+        z-index: 999
+        display: flex
+        gap: 2px
+        flex-direction: column
 
-.dd-btn
-    text-align: center
-    padding: 8px
-    border-radius: 12px
-    line-height: 130%
-    font-size: 13px
+    &-btn
+        text-align: center
+        padding: 8px
+        border-radius: 12px
+        line-height: 130%
+        font-size: 13px
 
-.dd-area:hover .dd-list-btn
-    background-color: $gray-900
+        &:hover
+            background-color: $white-600
 
-.dd-list-hover
-    transform: translateX(48px)
-    transition: 0.3s ease
-    opacity: 0
-    width: 0
-    height: 0
+    &-area:hover
+        .dd-list-btn
+            background-color: $gray-900
+        .dd-list-hover
+            transform: translateX(0px)
+            opacity: 1
+            width: 48px
+            height: auto
 
-.dd-area:hover .dd-list-hover
-    transform: translateX(0px)
-    opacity: 1
-    width: 48px
-    height: auto
-
-.dd-btn:hover
-    background-color: $white-600
-    /* color: $primary-900) */
+    &-list-hover
+        transform: translateX(48px)
+        transition: 0.3s ease
+        opacity: 0
+        width: 0
+        height: 0
 
 .disabled
     display: none
 
 .rotate
     transform: rotate(180deg)
+
+.achievements
+    position: relative
+    &-list
+        list-style-type: none
+        margin-inline-start: 0px
+        margin-inline-end: 0px
+        padding-inline-start: 0px
+        unicode-bidi: isolate
+        display: flex
+        flex-direction: column
+        gap: 48px
+        z-index: 99
+
+    &-person
+        width: auto
+        height: auto
+        max-height: 30vh
+        position: absolute
+        left: 50%
+        bottom: 0
+        transform: translate(-50%, 0)
+
+    &-links
+        text-align: center
+        margin-top: 210px
+        margin-right: 120px
+
+        .achievements-details
+            @extend .anim-sp-n
+            padding: 8px
+            display: inline-block
+            margin-top: 73px
+    &-logos
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        grid-column-gap: 40px
+        grid-row-gap: 20px
+
+.achievements-info
+    display: flex
+    flex-direction: column
+    .h2
+        margin-bottom: 8px
+    .subtitle
+        margin-bottom: 98px
+        color: $gray-800
