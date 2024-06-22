@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .h1 {
   font-size: 56px;
 }
@@ -215,6 +216,7 @@ a:hover {
 }
 
 .header-section {
+  animation: slideInDown 0.6s ease forwards;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -445,4 +447,51 @@ a:hover {
 .scrollbar .scroll.active {
   background-color: #B0B0B0;
   height: 60vh;
+}
+
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-80%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(5%);
+  }
+  80% {
+    transform: translateY(-1%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Анимация для появления снизу */
+@keyframes slideInUp {
+  0% {
+    transform: translateY(80%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-30%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(1%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* Применение анимации */
+.slide-in-down {
+  animation: slideInDown 0.6s ease-out;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* Исходное состояние секции (скрытая) */
+.hidden {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
