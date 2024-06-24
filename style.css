@@ -98,18 +98,52 @@ section {
 }
 
 .btn {
+  font-family: "Manrope", sans-serif;
   background-color: #fff;
   border: solid 1px #EBEBEB;
+  cursor: pointer;
 }
 .btn:hover {
   background-color: #F9F9F9;
 }
+.btn-disabled {
+  opacity: 0.6;
+  cursor: unset;
+}
 
 .btn,
 .btn-trns {
-  cursor: pointer;
   font-weight: 700;
   line-height: 130%;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1E93FF;
+  gap: 8px;
+}
+.btn-primary:hover {
+  background-color: #1B84E5;
+}
+.btn-primary.btn-disabled:hover {
+  background-color: #1E93FF;
+}
+
+input {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #EBEBEB;
+  color: #4A4A4A;
+  font-family: "Manrope", sans-serif;
+}
+input::-moz-placeholder {
+  color: #B0B0B0;
+}
+input::placeholder {
+  color: #B0B0B0;
+}
+input:focus-visible {
+  outline: 2px solid #1B84E5;
 }
 
 a {
@@ -140,18 +174,18 @@ a:hover {
   align-items: center;
 }
 
-.flex-h {
+.flex-h, .endform-btns {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
 /* Animation pattern */
-.anim-sp-n, .achievements-links .achievements-details {
+.anim-sp-n, .achievements-links .achievements-details, .header-section {
   transition: 0.3s ease-out;
 }
 
-.anim-sp-h, .scrollbar .scroll, .disabled, .header-section, .header {
+.anim-sp-h, .scrollbar .scroll, .achievements-logo, .disabled, .header, .btn, .btn-primary {
   transition: 0.2s ease-out;
 }
 
@@ -198,6 +232,9 @@ a:hover {
 .header #up.change {
   bottom: 60px;
 }
+.header .up-downer {
+  z-index: 10 !important;
+}
 
 .header-menu {
   display: flex;
@@ -216,7 +253,7 @@ a:hover {
 }
 
 .header-section {
-  animation: slideInDown 0.6s ease forwards;
+  animation: slideInDown 0.6s ease-out forwards;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -276,7 +313,7 @@ a:hover {
 
 .btn-scroll {
   border-radius: 100px;
-  padding: 25px 29px;
+  padding: 18px 20px;
   display: inline-block;
   cursor: pointer;
   position: absolute;
@@ -285,9 +322,12 @@ a:hover {
   z-index: 999;
   margin-right: 32px;
 }
+.btn-scroll svg {
+  display: block;
+}
 
 .person-info {
-  background-color: #E3E3E3;
+  background-color: rgba(227, 227, 227, 0.98);
   border-radius: 20px;
   bottom: 64px;
   left: 0;
@@ -295,6 +335,7 @@ a:hover {
   padding: 20px 20px;
   width: 319px;
   max-height: 117px;
+  filter: blur();
 }
 .person-info .h4 {
   color: #4A4A4A;
@@ -302,7 +343,7 @@ a:hover {
 .person-info .flex-fill-h .p3 {
   color: #636363;
 }
-.person-info .flex-h .p4 {
+.person-info .flex-h .p4, .person-info .endform-btns .p4 {
   color: #7D7D7D;
 }
 
@@ -414,6 +455,14 @@ a:hover {
   grid-column-gap: 40px;
   grid-row-gap: 20px;
 }
+.achievements-logo {
+  filter: grayscale(100%);
+  opacity: 0.8;
+}
+.achievements-logo:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
 
 .achievements-info {
   display: flex;
@@ -449,6 +498,7 @@ a:hover {
   height: 60vh;
 }
 
+/* Анимация для появления сверху */
 @keyframes slideInDown {
   0% {
     transform: translateY(-80%);
@@ -456,19 +506,19 @@ a:hover {
   }
   60% {
     transform: translateY(5%);
+    opacity: 1;
   }
   80% {
     transform: translateY(-1%);
   }
   100% {
     transform: translateY(0);
-    opacity: 1;
   }
 }
 /* Анимация для появления снизу */
 @keyframes slideInUp {
   0% {
-    transform: translateY(80%);
+    transform: translateY(100%);
     opacity: 0;
   }
   60% {
@@ -476,22 +526,110 @@ a:hover {
     opacity: 1;
   }
   80% {
-    transform: translateY(1%);
+    transform: translateY(10%);
   }
   100% {
     transform: translateY(0);
   }
 }
-/* Применение анимации */
-.slide-in-down {
-  animation: slideInDown 0.6s ease-out;
+ul {
+  list-style-type: none;
+  padding-inline-start: 0;
 }
 
-.slide-in-up {
-  animation: slideInUp 0.6s ease-out;
+.workpattern {
+  flex-direction: column;
+  justify-content: unset;
+}
+.workpattern .h2 {
+  margin-top: 150px;
+  margin-bottom: 8px;
+}
+.workpattern .p3 {
+  margin-bottom: 98px;
+}
+.workpattern-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 80px;
 }
 
-/* Исходное состояние секции (скрытая) */
-.hidden {
-  display: none;
+.header-section p.subtitle {
+  color: #969696;
+}
+
+.endform {
+  flex-direction: column;
+  justify-content: unset;
+}
+.endform .h2 {
+  margin-top: 150px;
+  margin-bottom: 8px;
+}
+.endform .p3 {
+  margin-bottom: 64px;
+}
+.endform .btn {
+  padding: 8px;
+  border-radius: 12px;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 13px;
+}
+.endform .devider {
+  width: 1px;
+  height: 14px;
+  background-color: #E3E3E3;
+}
+.endform-btns {
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.endform-devider {
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #B0B0B0;
+}
+.endform-devider .devider {
+  width: 470px;
+  max-width: 470px;
+  height: 1px;
+}
+.endform-inputs {
+  max-width: 365px;
+  align-items: end;
+}
+.endform-inputs .input {
+  width: 100%;
+  margin-bottom: 8px;
+}
+.endform-inputs .input-description {
+  color: #B0B0B0;
+  max-width: 365px;
+}
+.endform-inputs .btn-primary {
+  margin-top: 20px;
+}
+.endform-illustration {
+  position: absolute;
+  top: 20vh;
+  left: 50vw;
+  width: 444px;
+}
+
+.p-color {
+  color: #1E93FF;
+}
+
+.flex-h, .endform-btns {
+  display: flex;
+  align-items: center;
+}
+
+.flex-v, .endform-inputs {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */
