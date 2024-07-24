@@ -59,6 +59,15 @@ const updateScrollbar = () => {
     });
 }
 
+const menuOpener = () => {
+    if (mobileMenu.style.left == '-100vw') {
+        mobileMenu.style.left = '0vw'
+        return
+    }
+
+    mobileMenu.style.left = '-100vw'
+}
+
 const cards = Array.from(document.querySelectorAll('.header-section'))
 cards.slice(1).forEach(x => x.classList.add('disabled'))
 let currentCard = 0;
