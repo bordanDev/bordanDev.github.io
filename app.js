@@ -59,6 +59,15 @@ const updateScrollbar = () => {
     });
 }
 
+const menuOpener = () => {
+    if (mobileMenu.style.left == '-100vw') {
+        mobileMenu.style.left = '0vw'
+        return
+    }
+
+    mobileMenu.style.left = '-100vw'
+}
+
 const cards = Array.from(document.querySelectorAll('.header-section'))
 cards.slice(1).forEach(x => x.classList.add('disabled'))
 let currentCard = 0;
@@ -73,6 +82,7 @@ const scrollItem = Array.from(document.querySelectorAll('.scroll'))
 btnUp.addEventListener('click', () => previousSection());
 btnDown.addEventListener('click', () => nextSection());
 
+
 const handleScroll = (event) => {
     if (event.deltaY < 0) {
         previousSection();
@@ -84,3 +94,9 @@ const handleScroll = (event) => {
 document.addEventListener('wheel', handleScroll);
 
 validateButtons();
+
+
+const btnMenu = document.querySelector('.header-btn-mobile-menu')
+const mobileMenu = document.querySelector('.header-mobile-menu')
+
+btnMenu.addEventListener('click', () => menuOpener())

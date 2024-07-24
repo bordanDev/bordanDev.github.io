@@ -1,5 +1,5 @@
 .h1 {
-  font-size: 56px;
+  font-size: clamp(40px, 6vw, 56px);
 }
 
 .h2 {
@@ -19,7 +19,7 @@
 }
 
 .p1 {
-  font-size: 21px;
+  font-size: clamp(17px, 3vw, 21px);
 }
 
 .p2 {
