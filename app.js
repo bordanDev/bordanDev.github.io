@@ -59,7 +59,7 @@ const updateScrollbar = () => {
     });
 }
 
-const menuOpener = () => {
+function menuOpener() {
     if (mobileMenu.style.left == '-100vw') {
         mobileMenu.style.left = '0vw'
         return

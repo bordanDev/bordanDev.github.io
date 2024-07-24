@@ -661,7 +661,7 @@ ul {
 }
 
 .header-mobile-menu {
-  margin: 32px 0;
+  padding: 32px;
   gap: 32px;
   background-color: #F9F9F9;
   z-index: 9999;
@@ -775,12 +775,15 @@ ul {
     height: 4px;
   }
   .header-section__img {
-    max-width: 80vw;
+    max-width: 75vw;
+    left: 0px;
+    right: 0;
   }
   .header-section__text {
     margin-top: 5vh;
   }
   .person-info {
+    display: none;
     left: unset;
     right: -60px;
     padding: 12px 72px 12px 16px;
@@ -793,5 +796,31 @@ ul {
   }
   .person-info .p4 {
     font-size: 9px;
+  }
+  .scrollbar {
+    right: 16px;
+  }
+  .endform .h2 {
+    font-size: 32px;
+    margin-top: 40px;
+  }
+  .endform .p3 {
+    font-size: 13px;
+    margin-bottom: 40px;
+  }
+  .endform-illustration {
+    display: none;
+  }
+  .endform-btns {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .endform-btns .devider {
+    display: none;
+  }
+  .endform-devider {
+    font-size: 13px;
+    margin-bottom: 20px;
   }
 }/*# sourceMappingURL=style.css.map */
