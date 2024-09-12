@@ -242,6 +242,7 @@ a
     .h2
         margin-top: 150px
 .btn-scroll
+    position: fixed !important
     border-radius: 100px
     padding: 18px 20px
     display: inline-block
@@ -249,6 +250,7 @@ a
     position: absolute
     right: 0
     bottom: 72px
+    right: 6vw
     z-index: 999
     margin-right: 32px
     svg
@@ -401,7 +403,7 @@ a
         color: $gray-800
 
 .scrollbar
-    position: absolute
+    position: fixed
     right: 32px
     top: 0
     display: flex
@@ -421,6 +423,23 @@ a
         &.active
             background-color: $gray-900
             height: 60vh
+
+    .scroll-double
+        &.active
+            background-color: $white-600
+    .scroll.sub-active
+        background-color: $white-600 !important
+        .sub-active
+            height: 50%
+            border-radius: 20px
+            background-color: $gray-900 !important
+
+    .scroll-double
+        background-color: inherit
+    // .scroll
+    //     .actve>
+    //         .sub-active
+    //             ackground-color: #EBEBEB !important
 
 /* Анимация для появления сверху */
 @keyframes slideInDown
@@ -495,6 +514,8 @@ ul
         background-color: $white-500
     &-btns
         @extend .flex-h
+        display: inline-flex
+        flex-wrap: wrap
         gap: 12px
         margin-bottom: 24px
     &-devider
@@ -621,7 +642,11 @@ ul
         // right: 380px
 
 @media (max-width: 991px)
-
+    .endform
+        &-illustration
+            display: none
+    .scrollbar
+        right: 16px
     .header
         &-links
             a
@@ -677,8 +702,36 @@ ul
             font-size: 13px
         .p4
             font-size: 9px
-    .scrollbar
-        right: 16px
+
+    .achievements
+        flex-direction: column
+        justify-content: unset
+        gap: 40px
+        &-list
+            gap: 32px
+        &-logos
+            grid-column-gap: 12px
+            grid-row-gap: 4px
+        &-links
+            margin-top: 0
+            lign-items: center
+            width: 100%
+            justify-content: space-evenly
+        &-person
+            display: none
+        .achievement-list__title
+            font-size: 24px
+        .achievement-list__sub-title
+            font-size: 17px
+        .achievements-logo-img
+            height: 64px
+            width: 64px
+
+        .h2
+            font-size: 32px
+            margin-top: 40px
+        .subtitle
+            margin-bottom: 40px
 
     .endform
         .h2
@@ -690,11 +743,30 @@ ul
         &-illustration
             display: none
         &-btns
-            display: inline-flex
-            flex-wrap: wrap
             margin-bottom: 20px
             .devider
                 display: none
         &-devider
             font-size: 13px
             margin-bottom: 20px
+    .btn-scroll
+        margin-right: 16px
+
+    .workpattern
+        .h2
+            font-size: 32px
+            margin: 40px 0 2px
+        .h4
+            font-size: 24px
+            margin-bottom: 6px
+        .p2
+            font-size: 17px
+            color: $gray-700
+        .p3
+            font-size: 13px
+            color: $gray-800
+            margin-bottom: 40px
+        .workpattern-list
+            display: flex
+            flex-direction: column
+            gap: 24px

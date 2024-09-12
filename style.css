@@ -321,6 +321,7 @@ a:hover {
 }
 
 .btn-scroll {
+  position: fixed !important;
   border-radius: 100px;
   padding: 18px 20px;
   display: inline-block;
@@ -328,6 +329,7 @@ a:hover {
   position: absolute;
   right: 0;
   bottom: 72px;
+  right: 6vw;
   z-index: 999;
   margin-right: 32px;
 }
@@ -486,7 +488,7 @@ a:hover {
 }
 
 .scrollbar {
-  position: absolute;
+  position: fixed;
   right: 32px;
   top: 0;
   display: flex;
@@ -505,6 +507,20 @@ a:hover {
 .scrollbar .scroll.active {
   background-color: #B0B0B0;
   height: 60vh;
+}
+.scrollbar .scroll-double.active {
+  background-color: #EBEBEB;
+}
+.scrollbar .scroll.sub-active {
+  background-color: #EBEBEB !important;
+}
+.scrollbar .scroll.sub-active .sub-active {
+  height: 50%;
+  border-radius: 20px;
+  background-color: #B0B0B0 !important;
+}
+.scrollbar .scroll-double {
+  background-color: inherit;
 }
 
 /* Анимация для появления сверху */
@@ -592,6 +608,8 @@ ul {
   background-color: #E3E3E3;
 }
 .endform-btns {
+  display: inline-flex;
+  flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 24px;
 }
@@ -735,6 +753,12 @@ ul {
   }
 }
 @media (max-width: 991px) {
+  .endform-illustration {
+    display: none;
+  }
+  .scrollbar {
+    right: 16px;
+  }
   .header-links a {
     display: none;
   }
@@ -797,8 +821,43 @@ ul {
   .person-info .p4 {
     font-size: 9px;
   }
-  .scrollbar {
-    right: 16px;
+  .achievements {
+    flex-direction: column;
+    justify-content: unset;
+    gap: 40px;
+  }
+  .achievements-list {
+    gap: 32px;
+  }
+  .achievements-logos {
+    grid-column-gap: 12px;
+    grid-row-gap: 4px;
+  }
+  .achievements-links {
+    margin-top: 0;
+    lign-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .achievements-person {
+    display: none;
+  }
+  .achievements .achievement-list__title {
+    font-size: 24px;
+  }
+  .achievements .achievement-list__sub-title {
+    font-size: 17px;
+  }
+  .achievements .achievements-logo-img {
+    height: 64px;
+    width: 64px;
+  }
+  .achievements .h2 {
+    font-size: 32px;
+    margin-top: 40px;
+  }
+  .achievements .subtitle {
+    margin-bottom: 40px;
   }
   .endform .h2 {
     font-size: 32px;
@@ -812,8 +871,6 @@ ul {
     display: none;
   }
   .endform-btns {
-    display: inline-flex;
-    flex-wrap: wrap;
     margin-bottom: 20px;
   }
   .endform-btns .devider {
@@ -822,5 +879,30 @@ ul {
   .endform-devider {
     font-size: 13px;
     margin-bottom: 20px;
+  }
+  .btn-scroll {
+    margin-right: 16px;
+  }
+  .workpattern .h2 {
+    font-size: 32px;
+    margin: 40px 0 2px;
+  }
+  .workpattern .h4 {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+  .workpattern .p2 {
+    font-size: 17px;
+    color: #7D7D7D;
+  }
+  .workpattern .p3 {
+    font-size: 13px;
+    color: #969696;
+    margin-bottom: 40px;
+  }
+  .workpattern .workpattern-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
 }/*# sourceMappingURL=style.css.map */
