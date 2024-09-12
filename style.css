@@ -727,6 +727,7 @@ ul {
   width: 100vw;
   height: calc(100vh - 117px);
   left: -100vw;
+  pointer-events: none;
 }
 
 @media (max-width: 1400px) {
