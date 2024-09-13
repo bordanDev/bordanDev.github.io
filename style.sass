@@ -490,9 +490,6 @@ ul
         gap: 80px
 
 .header-section
-    height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom))
-    padding-top: env(safe-area-inset-top)
-    padding-bottom: env(safe-area-inset-bottom)
     p.subtitle
         color: $gray-800
 
@@ -683,6 +680,9 @@ ul
 
 @media (max-width: 479px)
     .header-section
+        height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom))
+        padding-top: env(safe-area-inset-top)
+        padding-bottom: env(safe-area-inset-bottom)
         &__tags
             margin-top: 20px
             .circle

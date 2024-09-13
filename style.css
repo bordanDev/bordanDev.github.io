@@ -579,11 +579,6 @@ ul {
   gap: 80px;
 }
 
-.header-section {
-  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-}
 .header-section p.subtitle {
   color: #969696;
 }
@@ -796,6 +791,11 @@ ul {
   }
 }
 @media (max-width: 479px) {
+  .header-section {
+    height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
   .header-section__tags {
     margin-top: 20px;
   }
