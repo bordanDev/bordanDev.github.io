@@ -96,10 +96,12 @@ listOfWorkpattern.forEach(x => x.innerHTML)
 function menuOpener() {
     if (mobileMenu.style.left == '-100vw') {
         mobileMenu.style.left = '0vw'
+        cards.slice(0).forEach(x => x.style.pointerEvents = 'none')
         return
     }
 
     mobileMenu.style.left = '-100vw'
+    cards.slice(0).forEach(x => x.style.pointerEvents = 'auto')
 }
 
 const scrollbar = document.querySelector('.scrollbar');
